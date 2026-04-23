@@ -42,3 +42,6 @@ y_pred_sgd = model_sgd.predict(X_test)
 # 模型评估
 print("lr模型得分：",mean_squared_error(y_pred_lr,y_test))
 print("sgd模型得分：",mean_squared_error(y_pred_sgd,y_test))
+
+
+测试git
