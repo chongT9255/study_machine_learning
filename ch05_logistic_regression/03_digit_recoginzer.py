@@ -44,14 +44,24 @@ model.fit(X_train, y_train)
 score = model.score(X_test, y_test)
 print(score) # 0.919047619047619
 
-# 7- 测试（预测某个图像表示的数字）
-print(type(X_test)) # <class 'numpy.ndarray'>
-print(type(y_test)) # <class 'pandas.core.series.Series'>
-digit = X_test[101,:].reshape(1,-1) # 转化为1*784维
-y_pred = model.predict(digit)
+unknown_data = plt.imread('../data/demo2.png')
+print(unknown_data.shape)
+print(type(unknown_data))  # <class 'numpy.ndarray'>
+# 需要将图片变为784列的向量 原本是ndarray 28*28
+unknown_data = unknown_data.reshape(1, 784)
+print(unknown_data.shape)
+# 3- 预测
+result = model.predict(unknown_data)
+print('预测结果：', result)
 
-print(f"预测结果：{y_pred},真实值：{y_test.iloc[101]}")
+# # 7- 测试（预测某个图像表示的数字）
+# print(type(X_test)) # <class 'numpy.ndarray'>
+# print(type(y_test)) # <class 'pandas.core.series.Series'>
+# digit = X_test[101,:].reshape(1,-1) # 转化为1*784维
+# y_pred = model.predict(digit)
 
-# 画出图像
-plt.imshow(digit.reshape(28,28),cmap='gray')
-plt.show()
+# print(f"预测结果：{y_pred},真实值：{y_test.iloc[101]}")
+#
+# # 画出图像
+# plt.imshow(digit.reshape(28,28),cmap='gray')
+# plt.show()
