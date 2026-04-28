@@ -13,7 +13,7 @@ def gradient(beta):
     # beta 是 2行1列 ==》 beta0 合 beta1 一元线性方程组
     # 梯度矩阵是 2行1列
     return X.T @ (X @ beta - y) / n * 2
-
+sdsd
 
 # 1-定义数据
 X = np.array([[5], [8], [10], [12], [15], [3], [7], [9], [14], [6]])  # 自变量，每周学习时长
