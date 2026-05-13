@@ -11,6 +11,8 @@ from sklearn.metrics import mean_squared_error # 均方差误差损失函数
 3、定义模型（线性回归模型）
 4、训练模型
 5、预测结果，计算误差
+
+-1
 -2
 """
 plt.rcParams['font.sans-serif']=['KaiTi']
